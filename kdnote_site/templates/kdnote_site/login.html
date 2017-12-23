@@ -63,7 +63,8 @@
 				<div class="col s12 m8 offset-m2">
 					<div class="card-panel white">
 						<h5>ログイン</h5>
-						<form action="../mypage" method="post"> {% csrf_token %}
+
+						<form action="/mypage/" method="post"> {% csrf_token %}
 							<!-- ログインID -->
 							<div class="row">
 								<div class="input-field col s12">
@@ -78,8 +79,6 @@
 									<label for="password">パスワード</label>
 								</div>
 							</div>
-							<!-- token -->
-							<input type="hidden" name="token" value="">
 							<!-- ログインボタン -->
 							<div class="row">
 								<button class="btn waves-effect waves-light blue darken-1 col s8 offset-s2" type="submit" name="action">ログイン</button>
