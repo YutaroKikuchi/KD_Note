@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('kdnote_site.urls'))
+    url(r'', include('kdnote_site.urls')),
+    url(r'^mypage/', include('kdnote_site.urls')),
 ]
