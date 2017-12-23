@@ -9,19 +9,10 @@ html {
 }
 
 body {
+	min-height: 100vh;
 	background-color: #f5f5f5;
 }
 
 a, .card-image, .brand-logo {
 	cursor: pointer;
 }
-
-.brand-logo {
-	color: #008FBC;
-}
-
-p.h4-caption {
-	font-size: 1.25em;
-	font-weight: 300;
-}
-

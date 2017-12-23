@@ -1,3 +1,27 @@
+body {
+	height: 100vh;
+	background-image: linear-gradient(-135deg, #5F4B8B, #008FBC);
+}
+
 main {
-	background: linera-gradient(-135deg, #5F4B8B, #008FBC);
+	height: 100%;
+	padding-top: 25%;
+}
+
+/* ロゴ */
+div.logo-wrapper {
+	text-align: center;
+}
+div.logo-wrapper .logo {
+	font-size: 2em;
+}
+
+/* ログインフォーム */
+#login_card {
+
+}
+
+/* 新規登録エリアへのリンク */
+#sing_up_link_wrapper {
+	margin-top: 64px;
 }

@@ -13,25 +13,26 @@
 	<!--Import materialize.css #カスタマイズしているのでCDNは使わない-->
 	<link type="text/css" rel="stylesheet" href= "{% static 'css/materialize.css'%}"  media="screen,projection"/>
 
+	<!-- Import jQuery before Materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 	<!-- Import noto-font-->
 	<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 
 	<!-- Load my css file and js file -->
 	<link type="text/css" rel="stylesheet" href="{% static 'css/common.css' %}" media="screen,projection">
 	<link type="text/css" rel="stylesheet" href="{% static 'css/login.css' %}" media="screen,projection">
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
 	</head>
 
 	<body>
-		<!-- Import jQuery before Materialize.js-->
-		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<!--Import materialize.js -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-	<header class="header-fixed">
+	<!-- <header class="header-fixed">
 		<nav> 
-			<div class="nav-wrapper teal">
+			<div class="nav-wrapper white">
 				<a href="index.html" class="brand-logo center">K/D NOTE</a>
 				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul class="right hide-on-med-and-down">
@@ -44,63 +45,57 @@
 				</ul>
 			</div>
 		</nav>
-	</header>
+	</header> -->
 
 	<main>
 		<div class="container">
 		<!-- Page Content goes here -->
+			
+			<div class="logo-wrapper">
+				<a href="#" class="logo white-text">K/D NOTE</a>
+			</div>
 
 			<!-- ログインフォームwrapper(Card) -->
-			<div class="row">
-				<div class="col s12 m6 l4">
+			<div id="login_card" class="row">
+				<div class="col s12 m8">
 					<div class="card-panel white">
 
-						<!-- ログインID -->
-						<div class="row">
-							<div class="input-field col s12">
-								<input id="login_id" type="text" class="validate">
-								<label for="login_id">ログインID</label>
+						<form action="#">
+							<!-- ログインID -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="login_id" type="text" class="validate" name="login_id">
+									<label for="login_id">ログインID</label>
+								</div>
 							</div>
-					</div>
-					<!-- ユーザー名 -->
-						<div class="row">
-							<div class="input-field col s12">
-								<input id="user_name" type="text" class="validate">
-								<label for="user_name">ユーザー名</label>
+							<!-- パスワード -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input id="password" type="password" class="validate" name="password">
+									<label for="password">パスワード</label>
+								</div>
 							</div>
-					</div>
-					<!-- パスワード -->
-						<div class="row">
-							<div class="input-field col s12">
-								<input id="password" type="password" class="validate">
-								<label for="password">パスワード</label>
+							<!-- token -->
+							<input type="hidden" name="token" value="">
+							<!-- ログインボタン -->
+							<div class="row">
+								<span class="col s2"></span>
+								<button class="btn waves-effect waves-light blue darken-1 col s8" type="submit" name="action">ログイン</button>
+								<span class="col s2"></span>
 							</div>
-					</div>
-
-					<!-- ログインボタン -->
-					<div class="row">
-							<a class="waves-effect waves-light btn col s6" href="../mypage/" >button</a>
-					</div>
+						</form>
+						
+						<!-- 新規登録のリンク -->
+						<div id="sing_up_link_wrapper">
+							<span>アカウントをお持ちではないですか？<a class="" href="#">新規登録</a></span>
+						</div>
 				</div>
 			</div>
 		</div>
 
-		<!-- 新規登録のリンク -->
-		<div class="row">
-			<a class="waves-effect waves-teal col s6" href="#">新規登録</a>
-		</div>
 	</main>
-			
-	<footer class="page-footer teal">
-		<div class="container">
-			
-		</div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2017 Copyright ***
-			</div>
-		</div>
-	</footer>
+
+	<!-- footer -->
 		
 	</body>
 </html>
