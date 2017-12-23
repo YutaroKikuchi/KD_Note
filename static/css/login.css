@@ -4,13 +4,15 @@ body {
 }
 
 main {
-	height: 100%;
-	padding-top: 25%;
+	padding-top: 36px;
 }
 
 /* ロゴ */
 div.logo-wrapper {
 	text-align: center;
+}
+div.logo-wrapper img.logo-icon {
+	height: 48px;
 }
 div.logo-wrapper .logo {
 	font-size: 2em;
@@ -20,8 +22,12 @@ div.logo-wrapper .logo {
 #login_card {
 
 }
+h5 {
+	margin-bottom: 20px;
+}
 
 /* 新規登録エリアへのリンク */
-#sing_up_link_wrapper {
+#sign_up_link_wrapper {
 	margin-top: 64px;
+	text-align: center;
 }
