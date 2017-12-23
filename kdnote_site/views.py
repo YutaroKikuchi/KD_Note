@@ -9,8 +9,8 @@ from .models import CustomUser
 def login(request):
 	return render(request, 'kdnote_site/login.html',{})
 
-def mypage(request, login_id, user_name, password):
-
+def mypage(request):
+	login_id = request.POST.get('login_id')
 	userdata = get_object_or_404(CustomUser, pk=login_id)
 
 	return render(request, 'kdnote_site/mypage.html',{})
