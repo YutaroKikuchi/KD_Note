@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html lang="ja">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<title>KD NOTE｜ログイン</title>
+
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css #カスタマイズしているのでCDNは使わない-->
+	<link type="text/css" rel="stylesheet" href= "{% static 'css/materialize.css'%}"  media="screen,projection"/>
+
+	<!-- Import jQuery before Materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<!-- Import noto-font-->
+	<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+
+	<!-- Load my css file and js file -->
+	<link type="text/css" rel="stylesheet" href="{% static 'css/common.css' %}" media="screen,projection">
+	<link type="text/css" rel="stylesheet" href="{% static 'css/login.css' %}" media="screen,projection">
+	<script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+	</head>
+
+	<body>
+	<!--Import materialize.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+	<!-- <header class="header-fixed">
+		<nav> 
+			<div class="nav-wrapper white">
+				<a href="index.html" class="brand-logo center">K/D NOTE</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="#"><i class="material-icons left">lock_outline</i>Coming soon...</a></li>
+					<li><a href="#"><i class="material-icons left">lock_outline</i>Coming soon...</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
+					<li><a href="#"><i class="material-icons left">lock_outline</i>Coming soon...</a></li>
+					<li><a href="#"><i class="material-icons left">lock_outline</i>Coming soon...</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header> -->
+
+	<main>
+		<div class="container">
+		<!-- Page Content goes here -->
+			
+			<div class="logo-wrapper">
+				<a href="#">
+					<img src="{% static 'images/logo_white.png'%}" class="logo-icon"><br>
+					<span class="logo white-text">K/D NOTE</span>
+				</a>
+			</div>
+
+			<!-- ログインフォームwrapper(Card) -->
+			<div id="login_card" class="row">
+				<div class="col s12 m8 offset-m2">
+					<div class="card-panel white">
+						<h5>ログイン</h5>
+
+						<form action="/mypage/" method="post"> {% csrf_token %}
+							<!-- ログインID -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="email" id="email" type="text" class="validate" name="email">
+									<label for="email">メールアドレス</label>
+								</div>
+							</div>
+							<!-- パスワード -->
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="password" id="password" type="password" class="validate" name="password">
+									<label for="password">パスワード</label>
+								</div>
+							</div>
+							<!-- ログインボタン -->
+							<div class="row">
+								<button class="btn waves-effect waves-light blue darken-1 col s8 offset-s2" type="submit" name="action">ログイン</button>
+							</div>
+						</form>
+						
+						<!-- 新規登録のリンク -->
+						<div id="sign_up_link_wrapper">
+							<span>アカウントをお持ちではないですか？<br><a class="" href="#">新規登録</a></span>
+						</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+	<!-- footer -->
+		
+	</body>
+</html>
+
