@@ -10,7 +10,7 @@ def login(request):
 	return render(request, 'kdnote_site/login.html',{})
 
 def mypage(request):
-	login_id = request.POST.get('login_id')
+	login_id = request.POST.get('email')
 	userdata = get_object_or_404(CustomUser, pk=login_id)
 
 	return render(request, 'kdnote_site/mypage.html',{})
