@@ -50,7 +50,7 @@ class UserManager(BaseUserManager):
 			password=password
 		)
 
-		user.is_staff = True
+		#user.is_staff = True
 		user.set_admin()
 		user.set_password(password)
 		user.set_create_date()
