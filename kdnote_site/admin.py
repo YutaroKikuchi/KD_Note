@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import CustomUser
+from .models import CustomUser, Team, Score
 
 # Register your models here.
 
@@ -22,3 +22,6 @@ class UserAdmin(BaseUserAdmin):
 	filter_horizontal = ()
 
 admin.site.register(CustomUser, UserAdmin)
+
+admin.site.register(Team)
+admin.site.register(Score)

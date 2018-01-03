@@ -109,3 +109,38 @@ class CustomUser(AbstractBaseUser):
 		"Is the user a member of staff?"
 		# Simplest possible answer: All admins are staff
 		return self.is_admin
+
+class Team(models.Model):
+	team_name = models.CharField(max_length=64,unique=True,primary_key=True,default='DEFAULT NAME')
+
+	def __str__(self):
+		return self.team_name
+
+class Score(models.Model):
+	id = models.BigIntegerField(primary_key=True,default=1)
+	user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+	group = models.ForeignKey(Team, on_delete=models.SET_NULL,null=True)
+
+	kill = models.IntegerField()
+	death = models.IntegerField()
+
+	win = models.BooleanField()
+
+	RULES = (('FR','フラッグ戦'),
+			('EL','全滅戦'),
+			('GR','大将戦'),
+			('RE','復活戦'),
+			('ME','メディック戦'),
+			('SP','スパイ戦'),
+			('OD','攻守戦'),
+			('HG','ハンドガン戦'),
+			('FX','キツネ狩り'),
+			('RE',' リアルカウント戦')
+			)
+	
+	rule = models.CharField(max_length=2,choices=RULES,default='FR')
+
+	date = models.DateField()
+
+	def __str__(self):
+		return str(self.id)
