@@ -1,0 +1,10 @@
+#fab_wrapper {
+	position: fixed;
+		bottom: 24px;
+		right: 24px;
+		z-index: 996;
+}
+
+main {
+	padding-top: 8px;
+}

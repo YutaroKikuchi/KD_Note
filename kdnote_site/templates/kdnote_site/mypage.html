@@ -1,7 +1,127 @@
-this is mypage
+<!DOCTYPE html>
 
-<h1>{{user_name}}のマイページ</h1>
+{% load staticfiles %}
+<html lang="ja">
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<title>KD NOTE｜マイページ</title>
 
-メアド:{{email}}<br>
-登録日:{{create_date}}<br>
-修正日:{{update_date}}<br>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!--Import materialize.css #カスタマイズしているのでCDNは使わない-->
+	<link type="text/css" rel="stylesheet" href= "{% static 'css/materialize.css'%}"  media="screen,projection"/>
+
+	<!-- Import jQuery before Materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+	<!-- Import noto-font-->
+	<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+
+	<!-- Load my css file and js file -->
+	<link type="text/css" rel="stylesheet" href="{% static 'css/common.css' %}" media="screen,projection">
+	<link type="text/css" rel="stylesheet" href="{% static 'css/mypage.css' %}" media="screen,projection">
+	<script type="text/javascript" src="{% static 'js/common.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/mypage.js' %}"></script>
+	</head>
+
+	<body>
+	<!--Import materialize.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+	<header class="header-fixed">
+		<nav> 
+			<div class="nav-wrapper white">
+				<a href="/mypage/" class="brand-logo center mainpurple-text">K/D NOTE</a>
+				<a href="#" data-activates="slide-out" class="button-collapse mainpurple-text show-on-large"><i class="material-icons">menu</i></a>
+				<ul id="slide-out" class="side-nav">
+					<li>
+						<div class="user-view">
+							<div class="background purple">
+							</div>
+							<a href="#!user"><img class="circle" src="{% static 'images/logo_white.png' %}"></a>
+							<a href="#!name"><span class="white-text name">{{user_name}}</span></a>
+							<a href="#!email"><span class="white-text email">{{email}}</span></a>
+						</div>
+					</li>
+					<li><a href="#!"><i class="material-icons">settings</i>設定</a></li>
+					<li><div class="divider"></div></li>
+					<li><a class="subheader">My Group</a></li>
+					<li><a class="waves-effect" href="#!">HogeHoge</a></li>
+					<li><a class="waves-effect" href="#!">HogeHoge</a></li>
+					<li><a class="waves-effect" href="#!">HogeHoge</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+		<!-- Page Content goes here -->
+			<!-- チーム一覧 -->
+			<h5>所属チーム</h5>
+			<ul class="collection">
+				<!-- group sample -->
+				<li class="collection-item avatar">
+					<img src="{% static 'images/logo_purple.png' %}" alt="" class="circle">
+					<span class="title">チーム名</span>
+				</li>
+				<!-- group sample -->
+				<li class="collection-item avatar">
+					<i class="material-icons circle">folder</i>
+					<span class="title">チーム名</span>
+				</li>
+				<!-- group sample -->
+				<li class="collection-item avatar">
+					<i class="material-icons circle green">insert_chart</i>
+					<span class="title">チーム名</span>
+				</li>
+				<!-- group sample -->
+				<li class="collection-item avatar">
+					<i class="material-icons circle red">play_arrow</i>
+					<span class="title">チーム名</span>
+				</li>
+			</ul>
+
+			<!-- チーム作成ボタン -->
+			<div class="row">
+				<a class="waves-effect waves-light btn modal-trigger mainpurple col s6 offset-s3 m4 offset-m4" href="#modal1">チーム作成</a>
+			</div>
+			<!-- チーム作成ダイアログ -->
+			<div id="modal1" class="modal">
+				<div class="modal-content">
+					<h5 class="mainpurple-text">チーム作成</h5>
+					<!-- ログインフォームwrapper(Card) -->
+					<form action="/mypage/" method="post"> {% csrf_token %}
+						<div class="row">
+							<div class="input-field col s12">
+								<input id="team_name" type="text" class="validate" name="team_name">
+								<label for="email">チーム名</label>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">キャンセル</a>
+					<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">作成</a>
+				</div>
+			</div>
+
+			<!-- グループが1つもない状態で表示 -->
+			<div class="empty">
+				
+			</div>
+
+			<!-- FAB -->
+			<div id="fab_wrapper">
+				<a class="btn-floating btn-large waves-effect waves-light blue darken-1"><i class="material-icons">create</i></a>
+			</div>
+		</div>
+	</main>
+
+	<!-- footer -->
+		
+	</body>
+</html>
+

@@ -307,6 +307,13 @@
   color: #c51162 !important;
 }
 
+.mainpurple {
+  background-color: #5F4B8B !important;
+}
+.mainpurple-text {
+  color: #5F4B8B !important;
+}
+
 .purple {
   background-color: #9c27b0 !important;
 }
@@ -3038,7 +3045,8 @@ td, th {
 }
 
 .collection .collection-item.avatar {
-  min-height: 84px;
+  /*min-height: 84px;*/
+  min-height: 64px;
   padding-left: 72px;
   position: relative;
 }
@@ -3063,7 +3071,9 @@ td, th {
 }
 
 .collection .collection-item.avatar .title {
-  font-size: 16px;
+  /*font-size: 16px;*/
+  font-size: 18px;
+  line-height: 44px;
 }
 
 .collection .collection-item.avatar p {
